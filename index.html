@@ -102,7 +102,7 @@
           </span>
           GitHub
         </a>
-        <a href="/cv.pdf" class="link-item">
+        <a href="#" id="cv-download" class="link-item">
           <span class="svg-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -157,5 +157,32 @@
         <p>© 2025 Mauro Laime - Desarrollador Fullstack</p>
       </footer>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Para implementación futura: Añadir aquí la URL de tu CV en PDF
+        const cvURL = "https://tu-url-de-cv.pdf";
+
+        document
+          .getElementById("cv-download")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            if (cvURL !== "https://tu-url-de-cv.pdf") {
+              // Si tienes la URL real, descarga el CV
+              window.open(cvURL, "_blank");
+            } else {
+              // Mensaje temporal hasta que tengas la URL del CV
+              alert(
+                "CV disponible pronto. Por favor contacta para solicitar una copia."
+              );
+            }
+          });
+
+        // Opcional: Agregar datos de visita
+        const visitDate = new Date().toISOString();
+        if (localStorage) {
+          localStorage.setItem("lastVisit", visitDate);
+        }
+      });
+    </script>
   </body>
 </html>
